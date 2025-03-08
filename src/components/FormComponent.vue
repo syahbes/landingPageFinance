@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
 
-// Define the form data type with an index signature
 type FormData = {
   [key: string]: string;
 };
@@ -16,7 +15,6 @@ const formData = ref<FormData>({
 const handleSubmit = () => {
   console.log("Form submitted", { ...formData.value });
 
-  // Reset form
   Object.keys(formData.value).forEach((key) => {
     formData.value[key] = "";
   });
@@ -43,7 +41,9 @@ const fields = [
 <template>
   <div class="form-container">
     <form @submit.prevent="handleSubmit">
-      <h3>Get your free compliance guide</h3>
+      <div class="form-header">
+        <h3>Get your free compliance guide</h3>
+      </div>
       <div v-for="field in fields" :key="field.name">
         <label :for="field.name">{{ field.label }}</label>
         <input
@@ -53,14 +53,112 @@ const fields = [
           v-model="formData[field.name]"
         />
       </div>
-      <button type="submit">Submit</button>
+      <button type="submit">Get Free Reprort</button>
+      <div class="privacy-text">
+        <span
+          >By submitting this form, you agree to our <a href="#"
+            >Privacy Policy</a
+          >.</span
+        >
+      </div>
+      <div class="recaptcha-text">
+        <span
+          >This site is protected by reCAPTCHA and the Google Privacy Policy and
+          <a href="#">Terms of Service</a> apply.</span
+        >
+      </div>
     </form>
   </div>
 </template>
 
 <style scoped>
 .form-container {
-  border: 1px solid #e5e7eb;
   width: 576px;
+  margin: 0 auto;
+  padding: 40px 0px;
+  border-radius: 16px;
+  background-color: var(--color-background-soft);
+  color: var(--color-gray);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+.form-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+  line-height: 32px;
+  text-align: center;
+  color: var(--color-white);
+}
+
+label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+input {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: 1px solid #5e5e62;
+  border-radius: 4px;
+  background-color: var(--color-background-soft);
+  color: white;
+  box-sizing: border-box;
+}
+
+input::placeholder {
+  color: #71717a;
+}
+
+button {
+  margin-top: 10px;
+  padding: 14px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--color-primary);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.privacy-text {
+  font-size: 14px;
+}
+
+.privacy-text a {
+  color: var(--color-white);
+  text-decoration: underline;
+}
+
+.recaptcha-text {
+  font-size: 14px;
+  color: var(--color-gray);
+  word-wrap: break-word;
+}
+
+.recaptcha-text a {
+  text-decoration: underline;
+  color: var(--color-gray);
 }
 </style>

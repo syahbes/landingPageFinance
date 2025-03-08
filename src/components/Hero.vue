@@ -25,7 +25,8 @@ import FormComponent from "./FormComponent.vue";
 }
 
 .hero-content {
-  max-width: 600px;
+  max-width: 636px;
+  padding: 40px 20px;
 }
 
 h1 {
@@ -39,7 +40,6 @@ h3 {
   font-weight: 400;
   font-size: 20px;
   line-height: 30px;
-  max-width: 540px;
 }
 
 </style>
