@@ -80,6 +80,14 @@ const fields = [
   background-color: var(--color-background-soft);
   color: var(--color-gray);
   box-sizing: border-box;
+  border: 1px solid transparent;
+  background-clip: padding-box, border-box;
+  background-origin: border-box;
+  background-image: linear-gradient(
+      var(--color-background-soft),
+      var(--color-background-soft)
+    ),
+    linear-gradient(45deg, #acaeb7, #4c4d51);
 }
 
 form {
