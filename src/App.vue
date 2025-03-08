@@ -23,7 +23,8 @@ header {
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  padding: 10px;
+  padding: 10px 20px;
+  box-sizing: border-box;
 }
 .logo {
   width: 195px;
@@ -35,5 +36,13 @@ main {
   justify-content: center;
   align-items: center;
   width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+@media (max-width: 576px) {
+  .logo {
+    width: 150px;
+    height: auto;
+  }
 }
 </style>

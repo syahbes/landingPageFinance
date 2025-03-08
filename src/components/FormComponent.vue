@@ -53,12 +53,11 @@ const fields = [
           v-model="formData[field.name]"
         />
       </div>
-      <button type="submit">Get Free Reprort</button>
+      <button type="submit">Get Free Report</button>
       <div class="privacy-text">
         <span
-          >By submitting this form, you agree to our <a href="#"
-            >Privacy Policy</a
-          >.</span
+          >By submitting this form, you agree to our
+          <a href="#">Privacy Policy</a>.</span
         >
       </div>
       <div class="recaptcha-text">
@@ -73,18 +72,21 @@ const fields = [
 
 <style scoped>
 .form-container {
-  width: 576px;
+  width: 100%;
+  max-width: 576px;
   margin: 0 auto;
-  padding: 40px 0px;
+  padding: 40px 20px;
   border-radius: 16px;
   background-color: var(--color-background-soft);
   color: var(--color-gray);
+  box-sizing: border-box;
 }
 
 form {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  width: 100%;
   max-width: 480px;
   margin: 0 auto;
 }
@@ -160,5 +162,22 @@ button:hover {
 .recaptcha-text a {
   text-decoration: underline;
   color: var(--color-gray);
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .form-container {
+    padding: 30px 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  h3 {
+    font-size: 20px;
+  }
+
+  form {
+    gap: 15px;
+  }
 }
 </style>

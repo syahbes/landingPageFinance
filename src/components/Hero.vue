@@ -22,11 +22,13 @@ import FormComponent from "./FormComponent.vue";
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .hero-content {
   max-width: 636px;
-  padding: 40px 20px;
+  padding: 40px 0;
 }
 
 h1 {
@@ -42,4 +44,41 @@ h3 {
   line-height: 30px;
 }
 
+/* Media queries for responsiveness */
+@media (max-width: 1200px) {
+  h1 {
+    font-size: 48px;
+    line-height: 58px;
+  }
+
+  h3 {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    padding: 30px 0 0 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  h1 {
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  h3 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
 </style>
