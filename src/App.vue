@@ -2,6 +2,7 @@
 import Hero from "./components/Hero.vue";
 import ComplianceGuide from "./components/ComplianceGuide.vue";
 import FAQ from "./components/FAQ.vue";
+import Team from "./components/Team.vue";
 </script>
 
 <template>
@@ -13,8 +14,7 @@ import FAQ from "./components/FAQ.vue";
     <Hero />
     <ComplianceGuide />
     <FAQ />
-    <!-- 3rd section -->
-    <!-- 4th section -->
+    <Team />
   </main>
   <footer>footer</footer>
 </template>
