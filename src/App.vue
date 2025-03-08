@@ -37,7 +37,7 @@ main {
   justify-content: center;
   align-items: center;
   width: 100%;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-x: hidden;
   gap: 40px;
 }
 

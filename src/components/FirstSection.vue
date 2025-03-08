@@ -50,10 +50,23 @@ const MOCK_DATA = [
 
 <style scoped>
 .compliance-guide {
-  width: 100%;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
   background-color: var(--color-background-soft);
   color: var(--color-white);
-  padding: 40px 20px;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header,
+.items-grid,
+.action {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .header {

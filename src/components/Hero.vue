@@ -3,25 +3,35 @@ import FormComponent from "./FormComponent.vue";
 </script>
 
 <template>
-  <div class="hero-container">
-    <div class="hero-content">
-      <h1>Stay Informed.<br />Stay Compliant.</h1>
-      <h3>
-        Sign up to access the latest Insights on Regulatory Highlights, Recent
-        Developments, and Future Outlook—all in one monthly report.
-      </h3>
+  <div class="hero-wrapper">
+    <div class="hero-container">
+      <div class="hero-content">
+        <h1>Stay Informed.<br />Stay Compliant.</h1>
+        <h3>
+          Sign up to access the latest Insights on Regulatory Highlights, Recent
+          Developments, and Future Outlook—all in one monthly report.
+        </h3>
+      </div>
+      <FormComponent />
     </div>
-    <FormComponent />
   </div>
 </template>
 
 <style scoped>
+.hero-wrapper {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  display: flex;
+  justify-content: center;
+}
+
 .hero-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  max-width: 1400px;
   padding: 0 20px;
   box-sizing: border-box;
 }
