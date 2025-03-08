@@ -28,27 +28,110 @@ const MOCK_DATA = [
 </script>
 
 <template>
-  <div class="first-section">
-    <div>
-      <h3>Your Monthly Compliance Guide</h3>
-      <p>
+  <div class="compliance-guide">
+    <div class="header">
+      <h2 class="title">Your Monthly Compliance Guide</h2>
+      <p class="description">
         The Finance Magnates Compliance Industry Report provides an overview of
         key regulatory changes to help businesses navigate compliance challenges
       </p>
     </div>
-    <div>
-      <div v-for="item in MOCK_DATA" :key="item.title">
-        <h4>{{ item.title }}</h4>
-        <p>{{ item.text }}</p>
+    <div class="items-grid">
+      <div v-for="item in MOCK_DATA" :key="item.title" class="item">
+        <h4 class="item-title">{{ item.title }}</h4>
+        <p class="item-text">{{ item.text }}</p>
       </div>
+    </div>
+    <div class="action">
+      <button class="report-button">Get Free Report</button>
     </div>
   </div>
 </template>
 
 <style scoped>
-.first-section {
+.compliance-guide {
   width: 100%;
   background-color: var(--color-background-soft);
+  color: var(--color-white);
   padding: 40px 20px;
+}
+
+.header {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--color-white);
+}
+
+.description {
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--color-gray);
+  margin-bottom: 30px;
+}
+
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.item {
+  margin-bottom: 20px;
+  max-width: 350px;
+}
+
+.item-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #fff;
+  max-width: 350px;
+}
+
+.item-text {
+  font-size: 16px;
+  line-height: 1.4;
+  color: #aaa;
+  max-width: 350px;
+}
+
+.action {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.report-button {
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 25px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 1200px;
+  &:hover {
+    background-color: var(--color-primary-hover);
+  }
+}
+
+@media (max-width: 768px) {
+  .items-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .items-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 </style>
