@@ -142,7 +142,7 @@ button {
   border: none;
   border-radius: 4px;
   background-color: var(--color-primary);
-  color: white;
+  color: var(--color-white);
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;

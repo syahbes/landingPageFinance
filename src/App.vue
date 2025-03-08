@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import FirstSection from "./components/FirstSection.vue";
 import Hero from "./components/Hero.vue";
 </script>
 
@@ -9,7 +10,7 @@ import Hero from "./components/Hero.vue";
 
   <main>
     <Hero />
-    <!-- 2nd section -->
+    <FirstSection />
     <!-- 3rd section -->
     <!-- 4th section -->
   </main>
@@ -37,6 +38,7 @@ main {
   align-items: center;
   width: 100%;
   overflow-x: hidden; /* Prevent horizontal scrolling */
+  gap: 40px;
 }
 
 @media (max-width: 576px) {
