@@ -65,11 +65,11 @@ const navLinks = [
 footer {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
+  color: var(--color-gray);
 }
 
 .logo {
