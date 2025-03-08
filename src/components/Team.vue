@@ -112,16 +112,28 @@ const setSlide = (index: number) => {
 }
 
 .team-member-card {
-  background-color: #111111;
   border-radius: 10px;
   overflow: hidden;
   padding-bottom: 20px;
+  width: 378px;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  background-clip: padding-box, border-box;
+  background-origin: border-box;
+  background-image: linear-gradient(
+      var(--color-background),
+      var(--color-background)
+    ),
+    linear-gradient(180deg, #535455, var(--color-background));
 }
 
 .member-photo {
   width: 100%;
-  height: 260px;
+  /* height: 260px; */
+  width: 314px;
   overflow: hidden;
+  border-radius: 8px;
+  margin: 30px auto;
 }
 
 .member-photo img {
@@ -163,7 +175,7 @@ const setSlide = (index: number) => {
 }
 
 .dot.active {
-  background-color: var(--color-primary);
+  background-color: var(--color-white);
 }
 
 /* Media queries for responsiveness */
