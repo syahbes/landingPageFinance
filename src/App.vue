@@ -3,6 +3,7 @@ import Hero from "./components/Hero.vue";
 import ComplianceGuide from "./components/ComplianceGuide.vue";
 import FAQ from "./components/FAQ.vue";
 import Team from "./components/Team.vue";
+import Footer from "./components/Footer.vue";
 </script>
 
 <template>
@@ -16,7 +17,7 @@ import Team from "./components/Team.vue";
     <FAQ />
     <Team />
   </main>
-  <footer>footer</footer>
+  <Footer />
 </template>
 
 <style scoped>
