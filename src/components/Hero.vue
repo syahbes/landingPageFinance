@@ -22,8 +22,6 @@ import FormComponent from "./FormComponent.vue";
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 40px 0;
-  gap: 40px;
 }
 
 .hero-content {
@@ -44,15 +42,4 @@ h3 {
   max-width: 540px;
 }
 
-/* @media (max-width: 1200px) {
-  .hero-container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  h1 {
-    font-size: 48px;
-    line-height: 60px;
-  }
-} */
 </style>
