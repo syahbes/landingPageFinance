@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import FirstSection from "./components/FirstSection.vue";
 import Hero from "./components/Hero.vue";
+import ComplianceGuide from "./components/ComplianceGuide.vue";
+import FAQ from "./components/FAQ.vue";
 </script>
 
 <template>
@@ -10,7 +11,8 @@ import Hero from "./components/Hero.vue";
 
   <main>
     <Hero />
-    <FirstSection />
+    <ComplianceGuide />
+    <FAQ />
     <!-- 3rd section -->
     <!-- 4th section -->
   </main>
