@@ -1,33 +1,48 @@
-# landingPageFinance
+# Landing Page Finance
 
-This template should help get you started developing with Vue 3 in Vite.
+A modern Vue 3 + TypeScript landing page for financial services.
 
-## Recommended IDE Setup
+## Live Demo
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Check out the live application: [https://landing-page-finance.vercel.app/](https://landing-page-finance.vercel.app/)
 
-## Type Support for `.vue` Imports in TS
+## Features
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+- Built with Vue 3
+- TypeScript for improved developer experience
+- Responsive design
+- Fast performance with Vite
 
-## Customize configuration
+## Getting Started
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+### Prerequisites
 
-## Project Setup
+- Node.js (v14 or higher recommended)
+- npm (v6 or higher recommended)
 
-```sh
-npm install
-```
+### Installation
 
-### Compile and Hot-Reload for Development
+1. Clone the repository
 
-```sh
-npm run dev
-```
+   ```sh
+   git clone [your-repository-url]
+   cd landingPageFinance
+   ```
 
-### Type-Check, Compile and Minify for Production
+2. Install dependencies
 
-```sh
-npm run build
-```
+   ```sh
+   npm install
+   ```
+
+3. Start the development server
+   ```sh
+   npm run dev
+   ```
+
+The application will be available at `http://localhost:5173` by default.
+
+## Contact
+
+Shlomi
+syahbes@gmail.com
