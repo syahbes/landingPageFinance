@@ -25,7 +25,7 @@ Check out the live application: [https://landing-page-finance.vercel.app/](https
 1. Clone the repository
 
    ```sh
-   git clone [your-repository-url]
+   git clone git@github.com:syahbes/landingPageFinance.git
    cd landingPageFinance
    ```
 
