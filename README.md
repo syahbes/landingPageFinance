@@ -17,8 +17,8 @@ Check out the live application: [https://landing-page-finance.vercel.app/](https
 
 ### Prerequisites
 
-- Node.js (v14 or higher recommended)
-- npm (v6 or higher recommended)
+- Node.js (v20 or higher recommended)
+- npm (v10 or higher recommended)
 
 ### Installation
 
