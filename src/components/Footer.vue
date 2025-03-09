@@ -22,112 +22,126 @@ const navLinks = [
   { text: "Events", url: "#" },
   { text: "Contact Us", url: "#" },
 ];
+
+const legalLinks = [
+  { text: "Cookie Policy", url: "#" },
+  { text: "Privacy Policy", url: "#" },
+  { text: "Terms and Conditions", url: "#" },
+  { text: "Manage Cookies", url: "#" },
+];
 </script>
 
 <template>
   <footer>
-    <div class="footer-branding">
-      <img alt="company logo" src="../assets/logo.svg" class="logo" />
-      <img alt="union logo" src="../assets/union.png" class="logo" />
+    <div class="logos-container">
+      <img
+        alt="Finance Magnates logo"
+        src="@/assets/logo.svg"
+        class="logo-primary"
+      />
+      <img
+        alt="Finance Magnates logo"
+        src="@/assets/union.png"
+        class="logo-secondary"
+      />
     </div>
-    <div class="footer-disclaimer">
-      <p>
-        Finance Magnates Intelligence, part of Finance Magnates, delivers
-        specialized research and insights on the financial markets. Offering
-        Quarterly, Annual, and custom reports tailored to specific business
-        needs, it covers key aspects such as trading volumes, market trends,
-        regulations, and more
-      </p>
-      <div class="social-links">
-        <a
-          v-for="(link, index) in socialLinks"
-          :key="index"
-          :href="link.url"
-          :aria-label="link.ariaLabel"
-          class="social-link"
-        >
-          <img :src="link.icon" :alt="link.ariaLabel" class="social-icon" />
-        </a>
+    <div class="footer-info-container">
+      <div class="text-and-social">
+        <div class="text">
+          <p>
+            Finance Magnates Intelligence, part of Finance Magnates, delivers
+            specialized research and insights on the financial markets. Offering
+            Quarterly, Annual, and custom reports tailored to specific business
+            needs, it covers key aspects such as trading volumes, market trends,
+            regulations, and more
+          </p>
+        </div>
+        <div class="social-links">
+          <a
+            v-for="(link, index) in socialLinks"
+            :key="index"
+            :href="link.url"
+            :aria-label="link.ariaLabel"
+            class="social-link"
+          >
+            <img :src="link.icon" :alt="link.ariaLabel" class="social-icon" />
+          </a>
+        </div>
       </div>
+      <nav class="footer-nav">
+        <ul>
+          <li v-for="link in navLinks" :key="link.text">
+            <a :href="link.url">{{ link.text }}</a>
+          </li>
+        </ul>
+      </nav>
     </div>
-    <div class="nav-links">
-      <ul>
-        <li v-for="link in navLinks" :key="link.text">
-          <a :href="link.url">{{ link.text }}</a>
-        </li>
-      </ul>
+    <div class="footer-bottom">
+      <div class="copyright">
+        <p>© 2024 "Finance Magnates CY Ltd." All rights reserved.</p>
+      </div>
+
+      <div class="legal-links">
+        <ul>
+          <li v-for="(link, index) in legalLinks" :key="index">
+            <a :href="link.url">{{ link.text }}</a>
+            <span v-if="index < legalLinks.length - 1" class="separator"></span>
+          </li>
+        </ul>
+      </div>
     </div>
   </footer>
 </template>
 
-<style scoped>
-footer {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  width: 100%;
-  padding: 20px;
-  box-sizing: border-box;
-  color: var(--color-gray);
+<style>
+.social-link {
+  display: inline-block;
+  margin-right: 10px;
+  transition: all 0.3s ease;
+  &:hover {
+    opacity: 0.8;
+    scale: 1.1;
+  }
+}
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.logo {
-  height: 195px;
+.footer-nav li {
+  margin-bottom: 0.75rem;
 }
 
-.footer-branding {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  max-width: 1400px;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-
-.footer-disclaimer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  width: 100%;
-  max-width: 1400px;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-
-.nav-links {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  max-width: 1400px;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-
-.nav-links ul {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.nav-links ul li {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.nav-links ul li a {
+.footer-nav a {
+  color: #fff;
   text-decoration: none;
-  color: var(--color-text);
+}
+
+@media (max-width: 922px) {
+  .logos-container {
+    max-width: 640px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo-primary {
+    width: 195px;
+  }
+  .logo-secondary {
+    width: 172px;
+  }
+  .footer-info-container {
+    max-width: 640px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 </style>
