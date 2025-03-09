@@ -24,7 +24,7 @@ import Footer from "./components/Footer.vue";
 
 <style scoped>
 header {
-  padding: 10px 20px;
+  padding: 10px;
   position: absolute;
   top: 10px;
   left: 10px;

@@ -5,6 +5,12 @@
   --color-gray: #a3a5a6;
   --color-primary: #1335f5;
   --color-primary-hover: #4560f7;
+
+  --mobile: 320px;
+  --tablet: 768px;
+  --desktop: 1024px;
+  --large-desktop: 1440px;
+  --xlarge-desktop: 1920px;
 }
 
 body {
@@ -16,4 +22,5 @@ body {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
