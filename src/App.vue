@@ -8,7 +8,9 @@ import Footer from "./components/Footer.vue";
 
 <template>
   <header>
-    <img alt="company logo" src="./assets/logo.svg" class="logo" />
+    <div class="logo-wrapper">
+      <img alt="company logo" src="./assets/logo.svg" class="logo" />
+    </div>
   </header>
 
   <main>
@@ -22,13 +24,16 @@ import Footer from "./components/Footer.vue";
 
 <style scoped>
 header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
   padding: 10px 20px;
-  box-sizing: border-box;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: transparent;
+  width: 100%;
+}
+.logo-wrapper {
+  max-width: 1400px;
+  margin:  auto;
 }
 .logo {
   width: 195px;

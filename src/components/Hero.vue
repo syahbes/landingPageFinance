@@ -32,7 +32,7 @@ import FormComponent from "./FormComponent.vue";
   align-items: center;
   width: 100%;
   max-width: 1400px;
-  padding: 0 20px;
+  padding: 60px 20px;
   box-sizing: border-box;
 }
 
