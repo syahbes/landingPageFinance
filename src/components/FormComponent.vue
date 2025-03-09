@@ -43,7 +43,6 @@ const fields = [
     <div class="blob topBlob"></div>
     <div class="blob midBlob"></div>
     <div class="blob bottomBlob"></div>
-    <!-- Add this line for the blob effect -->
     <form @submit.prevent="handleSubmit">
       <div class="form-header">
         <h3>Get your free compliance guide</h3>
@@ -76,7 +75,7 @@ const fields = [
 
 <style scoped>
 .form-container {
-  position: relative; /* Add this to position the blob relative to the form */
+  position: relative;
   width: 100%;
   max-width: 576px;
   margin: 0 auto;
@@ -95,7 +94,6 @@ const fields = [
     linear-gradient(45deg, #acaeb7, #4c4d51);
 }
 
-/* Alternative without composes - for regular CSS */
 .blob {
   position: absolute;
   background: linear-gradient(45deg, #1335f5, #6cace4);
