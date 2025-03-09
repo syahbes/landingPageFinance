@@ -40,6 +40,9 @@ const fields = [
 
 <template>
   <div class="form-container">
+    <div class="topBlob"></div>
+    <div class="bottomBlob"></div>
+    <!-- Add this line for the blob effect -->
     <form @submit.prevent="handleSubmit">
       <div class="form-header">
         <h3>Get your free compliance guide</h3>
@@ -72,6 +75,7 @@ const fields = [
 
 <style scoped>
 .form-container {
+  position: relative; /* Add this to position the blob relative to the form */
   width: 100%;
   max-width: 576px;
   margin: 0 auto;
@@ -90,6 +94,30 @@ const fields = [
     linear-gradient(45deg, #acaeb7, #4c4d51);
 }
 
+.topBlob {
+  position: absolute;
+  top: -205px;
+  left: -140px;
+  width: 300px;
+  height: 600px;
+  background: linear-gradient(45deg, #1335F5, #6CACE4);
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: -1; /* Ensure the blob is behind the form */
+}
+.bottomBlob {
+  position: absolute;
+  bottom: -200px;
+  right: -80px;
+  width: 300px;
+  height: 600px;
+  background: linear-gradient(45deg, #1335F5, #6CACE4);
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: -1; /* Ensure the blob is behind the form */
+}
+
+
 form {
   display: flex;
   flex-direction: column;
@@ -98,6 +126,7 @@ form {
   max-width: 480px;
   margin: 0 auto;
 }
+
 .form-header {
   display: flex;
   flex-direction: row;
