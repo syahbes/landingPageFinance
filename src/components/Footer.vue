@@ -5,7 +5,6 @@ import youtubeIcon from "@/assets/icons/youtube.svg";
 import xIcon from "@/assets/icons/x.svg"; // Twitter is now X
 import linkedinIcon from "@/assets/icons/linkedin.svg";
 import rssIcon from "@/assets/icons/rss.svg";
-import footerLogo from "@/assets/footerLogo.png";
 
 const socialLinks = [
   { icon: xIcon, url: "#", ariaLabel: "X (Twitter)" },
@@ -23,13 +22,13 @@ const navLinks = [
   { text: "Events", url: "#" },
   { text: "Contact Us", url: "#" },
 ];
-
 </script>
 
 <template>
   <footer>
     <div class="footer-branding">
-      <img alt="company logo" :src="footerLogo" class="logo" />
+      <img alt="company logo" src="../assets/logo.svg" class="logo" />
+      <img alt="union logo" src="../assets/union.png" class="logo" />
     </div>
     <div class="footer-disclaimer">
       <p>
