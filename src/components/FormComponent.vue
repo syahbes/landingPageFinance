@@ -40,8 +40,9 @@ const fields = [
 
 <template>
   <div class="form-container">
-    <div class="topBlob"></div>
-    <div class="bottomBlob"></div>
+    <div class="blob topBlob"></div>
+    <div class="blob midBlob"></div>
+    <div class="blob bottomBlob"></div>
     <!-- Add this line for the blob effect -->
     <form @submit.prevent="handleSubmit">
       <div class="form-header">
@@ -94,29 +95,35 @@ const fields = [
     linear-gradient(45deg, #acaeb7, #4c4d51);
 }
 
-.topBlob {
+/* Alternative without composes - for regular CSS */
+.blob {
   position: absolute;
-  top: -205px;
-  left: -140px;
-  width: 300px;
-  height: 600px;
-  background: linear-gradient(45deg, #1335F5, #6CACE4);
+  background: linear-gradient(45deg, #1335f5, #6cace4);
   border-radius: 50%;
   filter: blur(80px);
-  z-index: -1; /* Ensure the blob is behind the form */
+  z-index: -1;
 }
+
+.topBlob {
+  top: -205px;
+  left: -140px;
+  width: 450px;
+  height: 600px;
+}
+
+.midBlob {
+  top: -105px;
+  left: 120px;
+  width: 250px;
+  height: 400px;
+}
+
 .bottomBlob {
-  position: absolute;
   bottom: -200px;
   right: -80px;
   width: 300px;
   height: 600px;
-  background: linear-gradient(45deg, #1335F5, #6CACE4);
-  border-radius: 50%;
-  filter: blur(80px);
-  z-index: -1; /* Ensure the blob is behind the form */
 }
-
 
 form {
   display: flex;
