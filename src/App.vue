@@ -33,8 +33,9 @@ header {
 }
 .logo-wrapper {
   max-width: 1400px;
-  margin:  auto;
+  margin: auto;
 }
+
 .logo {
   width: 195px;
   height: 32px;
@@ -47,6 +48,12 @@ main {
   width: 100%;
   overflow-x: hidden;
   gap: 40px;
+}
+
+@media screen and (max-width: 992px) {
+  .logo-wrapper {
+    padding-left: 25px;
+  }
 }
 
 @media (max-width: 576px) {

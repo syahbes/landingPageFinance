@@ -31,6 +31,40 @@ const currentSlide = ref(0);
 // Function to change slide
 const setSlide = (index: number) => {
   currentSlide.value = index;
+
+  // Update to scroll to the selected card in mobile view
+  const container = document.querySelector(".team-members-grid");
+  const cards = document.querySelectorAll(".team-member-card");
+
+  if (container && cards && cards[index]) {
+    // Get the card element and cast to HTMLElement to access offsetLeft
+    const card = cards[index] as HTMLElement;
+    const containerElement = container as HTMLElement;
+
+    // Scroll to the card with smooth behavior
+    container.scrollTo({
+      left:
+        card.offsetLeft -
+        containerElement.offsetWidth / 2 +
+        card.offsetWidth / 2,
+      behavior: "smooth",
+    });
+  }
+};
+
+// New functions for scrolling on mobile
+const scrollLeft = () => {
+  const container = document.querySelector(".team-members-grid");
+  if (container) {
+    container.scrollBy({ left: -350, behavior: "smooth" });
+  }
+};
+
+const scrollRight = () => {
+  const container = document.querySelector(".team-members-grid");
+  if (container) {
+    container.scrollBy({ left: 350, behavior: "smooth" });
+  }
 };
 </script>
 
@@ -42,19 +76,28 @@ const setSlide = (index: number) => {
         <p>Meet our Team behind our intelligence insights.</p>
       </div>
 
-      <div class="team-members-grid">
-        <div
-          v-for="(member, index) in teamMembers"
-          :key="member.id"
-          class="team-member-card"
-          :class="{ active: index === currentSlide }"
-        >
-          <div class="member-photo">
-            <img :src="member.photo" :alt="member.name" />
+      <div class="scroll-container">
+        <!-- Add scroll buttons for mobile -->
+        <button class="scroll-btn prev-btn" @click="scrollLeft">←</button>
+
+        <div class="team-members-grid">
+          <div
+            v-for="(member, index) in teamMembers"
+            :key="member.id"
+            class="team-member-card"
+            :class="{ active: index === currentSlide }"
+            @click="setSlide(index)"
+          >
+            <div class="member-photo">
+              <img :src="member.photo" :alt="member.name" />
+            </div>
+            <h3 class="member-name">{{ member.name }}</h3>
+            <p class="member-bio">{{ member.bio }}</p>
           </div>
-          <h3 class="member-name">{{ member.name }}</h3>
-          <p class="member-bio">{{ member.bio }}</p>
         </div>
+
+        <!-- Add scroll buttons for mobile -->
+        <button class="scroll-btn next-btn" @click="scrollRight">→</button>
       </div>
 
       <div class="pagination">
@@ -69,6 +112,9 @@ const setSlide = (index: number) => {
     </div>
   </div>
 </template>
+
+// The main change is removing the fixed height and overflow-y for the bio
+element // and adjusting the card height on small devices
 
 <style scoped>
 .team-wrapper {
@@ -103,6 +149,35 @@ const setSlide = (index: number) => {
   font-size: 18px;
   color: var(--color-gray);
   margin: 0;
+}
+
+.scroll-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.scroll-btn {
+  display: none; /* Hidden on desktop */
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+  position: absolute;
+}
+
+.prev-btn {
+  left: 0;
+}
+
+.next-btn {
+  right: 0;
 }
 
 .team-members-grid {
@@ -154,8 +229,7 @@ const setSlide = (index: number) => {
   line-height: 1.5;
   color: var(--color-gray);
   margin: 0 15px;
-  height: 220px;
-  overflow-y: auto;
+  /* Removed fixed height and overflow-y to prevent scrolling */
 }
 
 .pagination {
@@ -181,13 +255,48 @@ const setSlide = (index: number) => {
 /* Media queries for responsiveness */
 @media (max-width: 992px) {
   .team-members-grid {
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 10px 5px;
+    gap: 20px;
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+  }
+
+  .team-members-grid::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+  }
+
+  .team-member-card {
+    flex: 0 0 auto;
+    width: 80%;
+    max-width: 350px;
+    scroll-snap-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .team-member-card.active {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .scroll-btn {
+    display: block;
   }
 }
 
 @media (max-width: 576px) {
   .team-members-grid {
-    grid-template-columns: 1fr;
+    padding: 10px 0;
+  }
+
+  .team-member-card {
+    width: 90%;
+    max-width: 300px;
+    /* Auto height to fit content without scrolling */
+    height: auto;
   }
 
   .team-header h2 {
@@ -198,9 +307,19 @@ const setSlide = (index: number) => {
     font-size: 16px;
   }
 
-  .member-bio {
+  .member-photo {
+    width: 90%;
+    max-width: 280px;
+  }
+
+  .member-photo img {
+    width: 100%;
     height: auto;
-    max-height: 200px;
+  }
+
+  .member-bio {
+    /* Removed fixed height and max-height to allow full content display */
+    height: auto;
   }
 }
 </style>

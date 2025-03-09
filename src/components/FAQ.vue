@@ -121,13 +121,37 @@ const images = [
 /* Responsive Design */
 @media (max-width: 992px) {
   .faq-images {
-    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .faq-items {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .faq-image {
+    width: 50%;
+    height: auto;
+  }
+}
+
+/* Mobile breakpoint */
+@media (max-width: 768px) {
+  .faq-items {
+    grid-template-columns: 1fr;
+  }
+
+  .faq-title {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .faq-images {
+    /* flex-direction: column; */
     align-items: center;
   }
 
   .faq-image {
-    width: 90%;
-    height: auto;
+    width: 50%;
   }
 }
 </style>

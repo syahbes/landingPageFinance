@@ -136,15 +136,18 @@ const MOCK_DATA = [
   }
 }
 
-@media (max-width: 768px) {
-  .items-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 992px) {
+  .header {
+    padding: 0 40px;
+  }
+  .items-grid { 
+    padding: 0 40px;
   }
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (max-width: 500px) {
   .items-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
 }
 </style>

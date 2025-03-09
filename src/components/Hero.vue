@@ -75,8 +75,11 @@ h3 {
 
   .hero-content {
     max-width: 100%;
-    padding: 30px 0 0 0;
-    text-align: center;
+    padding: 30px 30px 0 30px;
+    text-align: start;
+  }
+  h1 { 
+    font-size: 48px;
   }
 }
 
