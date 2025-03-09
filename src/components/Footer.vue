@@ -274,7 +274,9 @@ p {
     align-items: flex-start;
     text-align: left;
   }
-
+  p {
+    padding: 0 30px 0 0;
+  }
   .legal-links ul {
     flex-direction: column;
     align-items: flex-start;
