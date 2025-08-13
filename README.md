@@ -6,6 +6,10 @@ A modern Vue 3 + TypeScript landing page for financial services.
 
 Check out the live application: [https://landing-page-finance.vercel.app/](https://landing-page-finance.vercel.app/)
 
+## Screenshot
+<img width="1469" height="890" alt="image" src="https://github.com/user-attachments/assets/d9c67ea9-c05c-47cf-ad43-33a7ddbe5dba" />
+
+
 ## Features
 
 - Built with Vue 3
